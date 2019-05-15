@@ -159,25 +159,25 @@ class App extends React.Component {
                   </IconButton>
                 </div>
                 <List>
-                  <NavLink to="/" activeClassName={classes.top} onClick={this.handleClickTop}>
+                  <NavLink to="/portfolio/" activeClassName={classes.top} onClick={this.handleClickTop}>
                     <ListItem button key={"Top"}>
                       <ListItemIcon><Star /></ListItemIcon>
                       <ListItemText primary={"Top"} />
                     </ListItem>
                   </NavLink>
-                  <Link to="/profile" onClick={this.handleClickElse}>
+                  <Link to="/portfolio/profile" onClick={this.handleClickElse}>
                     <ListItem button key={"Profile"}>
                       <ListItemIcon><AccountBoxOutlined /></ListItemIcon>
                       <ListItemText primary={"Profile"} />
                     </ListItem>
                   </Link>
-                  <Link to="works" onClick={this.handleClickElse}>
+                  <Link to="/portfolio/works" onClick={this.handleClickElse}>
                     <ListItem button key={"Works"}>
                       <ListItemIcon><InsertInvitation /></ListItemIcon>
                       <ListItemText primary={"Works"} />
                     </ListItem>
                   </Link>
-                  <Link to="skill" onClick={this.handleClickElse}>
+                  <Link to="/portfolio/skill" onClick={this.handleClickElse}>
                     <ListItem button key={"Skill"}>
                       <ListItemIcon><SettingsPower /></ListItemIcon>
                       <ListItemText primary={"Skill"} />
@@ -192,10 +192,10 @@ class App extends React.Component {
               >
                 {/* <div className={classes.drawerHeader} /> */}
                 <Switch>
-                  <Route exact path="/" component={Top} onChange />
-                  <Route exact path="/profile" component={TextFiled} />
-                  <Route exact path="/works" component={WorksCard} />
-                  <Route exact path="/skill" component={Skill} />
+                  <Route exact path="/portfolio" component={Top} onChange />
+                  <Route exact path="/portfolio/profile" component={TextFiled} />
+                  <Route exact path="/portfolio/works" component={WorksCard} />
+                  <Route exact path="/portfolio/skill" component={Skill} />
                   <Route component={Top} />
                 </Switch>
               </main>

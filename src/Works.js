@@ -11,7 +11,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { BrowserRouter, Route, Link } from "react-router-dom"
-import { unstable_Box } from '@material-ui/core/Box';
 
 
 const styles = theme => ({
@@ -63,12 +62,6 @@ const cards = [
     ["/images/works/portfolio.jpg", "Portfolio", "このポートフォリオです。フレームワークにReactとMaterial-UIを使用しています。", "#"],
 
 ]
-
-function rand() {
-    return Math.round(Math.random() * 20) - 10;
-}
-
-
 
 class Skill extends React.Component {
 
