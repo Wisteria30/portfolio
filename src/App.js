@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Link, Switch} from "react-router-dom"
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
 import TextFiled from "./Profile";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -25,7 +25,7 @@ import SettingsPower from '@material-ui/icons/SettingsPower'
 import WorksCard from "./Works";
 import Skill from "./Skill";
 import Top from "./Top";
-// import { sizing } from '@material-ui/system';
+import SimpleModalWrapped from "./Modal";
 
 const drawerWidth = 240;
 
@@ -193,9 +193,10 @@ class App extends React.Component {
                 {/* <div className={classes.drawerHeader} /> */}
                 <Switch>
                   <Route exact path='/' component={Top} />
-                  <Route exact path="/profile" component={TextFiled} />
-                  <Route exact path="/works" component={WorksCard} />
-                  <Route exact path="/skill" component={Skill} />
+                  <Route path="/profile" component={TextFiled} />
+                  <Route path="/works" component={WorksCard} />
+                  <Route path="/skill" component={Skill} />
+                  <Route path="/modal" component={SimpleModalWrapped} />
                   <Route component={Top} />
                 </Switch>
               </main>
