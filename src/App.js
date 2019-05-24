@@ -4,7 +4,7 @@ import TextFiled from "./Profile";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import { unstable_Box as Box } from '@material-ui/core/Box';
+// import { unstable_Box as Box } from '@material-ui/core/Box';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -25,7 +25,7 @@ import SettingsPower from '@material-ui/icons/SettingsPower'
 import WorksCard from "./Works";
 import Skill from "./Skill";
 import Top from "./Top";
-import SimpleModalWrapped from "./Modal";
+// import SimpleModalWrapped from "./Modal";
 
 const drawerWidth = 240;
 
@@ -120,90 +120,90 @@ class App extends React.Component {
 
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Box height={100}>
-          <Box height="100%">
-            <div className={classes.root}>
-              <CssBaseline />
-              <AppBar
-                position="fixed"
-                className={classNames(classes.appBar, {
-                  [classes.appBarShift]: open,
-                })}
+        {/* <Box height={100}> */}
+        {/* <Box height="100%"> */}
+        <div className={classes.root}>
+          <CssBaseline />
+          <AppBar
+            position="fixed"
+            className={classNames(classes.appBar, {
+              [classes.appBarShift]: open,
+            })}
+          >
+            <Toolbar disableGutters={!open}>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={this.handleDrawerOpen}
+                className={classNames(classes.menuButton, open && classes.hide)}
               >
-                <Toolbar disableGutters={!open}>
-                  <IconButton
-                    color="inherit"
-                    aria-label="Open drawer"
-                    onClick={this.handleDrawerOpen}
-                    className={classNames(classes.menuButton, open && classes.hide)}
-                  >
-                    <MenuIcon />
-                  </IconButton>
-                  <Typography variant="h5" color="inherit" noWrap>
-                    Portfolio
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h5" color="inherit" noWrap>
+                Portfolio
             </Typography>
-                </Toolbar>
-              </AppBar>
-              <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="left"
-                open={open}
-                classes={{
-                  paper: classes.drawerPaper,
-                }}
-              >
-                <div className={classes.drawerHeader}>
-                  <IconButton onClick={this.handleDrawerClose}>
-                    {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                  </IconButton>
-                </div>
-                <List>
-                  <Link to="/" onClick={this.handleClickTop}>
-                    <ListItem button key={"Top"}>
-                      <ListItemIcon><Star /></ListItemIcon>
-                      <ListItemText primary={"Top"} />
-                    </ListItem>
-                  </Link>
-                  <Link to="/profile" onClick={this.handleClickElse}>
-                    <ListItem button key={"Profile"}>
-                      <ListItemIcon><AccountBoxOutlined /></ListItemIcon>
-                      <ListItemText primary={"Profile"} />
-                    </ListItem>
-                  </Link>
-                  <Link to="/works" onClick={this.handleClickElse}>
-                    <ListItem button key={"Works"}>
-                      <ListItemIcon><InsertInvitation /></ListItemIcon>
-                      <ListItemText primary={"Works"} />
-                    </ListItem>
-                  </Link>
-                  <Link to="/skill" onClick={this.handleClickElse}>
-                    <ListItem button key={"Skill"}>
-                      <ListItemIcon><SettingsPower /></ListItemIcon>
-                      <ListItemText primary={"Skill"} />
-                    </ListItem>
-                  </Link>
-                </List>
-              </Drawer>
-              <main
-                className={classNames(classes.content, {
-                  [classes.contentShift]: open, [classes.top]: color,
-                })} onClick={this.handleDrawerClose}
-              >
-                {/* <div className={classes.drawerHeader} /> */}
-                <Switch>
-                  <Route exact path='/' component={Top} />
-                  <Route path="/profile" component={TextFiled} />
-                  <Route path="/works" component={WorksCard} />
-                  <Route path="/skill" component={Skill} />
-                  <Route path="/modal" component={SimpleModalWrapped} />
-                  <Route component={Top} />
-                </Switch>
-              </main>
+            </Toolbar>
+          </AppBar>
+          <Drawer
+            className={classes.drawer}
+            variant="persistent"
+            anchor="left"
+            open={open}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+          >
+            <div className={classes.drawerHeader}>
+              <IconButton onClick={this.handleDrawerClose}>
+                {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+              </IconButton>
             </div>
-            {/* // </Box> */}
-          </Box>
-        </Box>
+            <List>
+              <Link to="/" onClick={this.handleClickTop}>
+                <ListItem button key={"Top"}>
+                  <ListItemIcon><Star /></ListItemIcon>
+                  <ListItemText primary={"Top"} />
+                </ListItem>
+              </Link>
+              <Link to="/profile" onClick={this.handleClickElse}>
+                <ListItem button key={"Profile"}>
+                  <ListItemIcon><AccountBoxOutlined /></ListItemIcon>
+                  <ListItemText primary={"Profile"} />
+                </ListItem>
+              </Link>
+              <Link to="/works" onClick={this.handleClickElse}>
+                <ListItem button key={"Works"}>
+                  <ListItemIcon><InsertInvitation /></ListItemIcon>
+                  <ListItemText primary={"Works"} />
+                </ListItem>
+              </Link>
+              <Link to="/skill" onClick={this.handleClickElse}>
+                <ListItem button key={"Skill"}>
+                  <ListItemIcon><SettingsPower /></ListItemIcon>
+                  <ListItemText primary={"Skill"} />
+                </ListItem>
+              </Link>
+            </List>
+          </Drawer>
+          <main
+            className={classNames(classes.content, {
+              [classes.contentShift]: open, [classes.top]: color,
+            })} onClick={this.handleDrawerClose}
+          >
+            {/* <div className={classes.drawerHeader} /> */}
+            <Switch>
+              <Route exact path='/' component={Top} />
+              <Route path="/profile" component={TextFiled} />
+              <Route path="/works" component={WorksCard} />
+              <Route path="/skill" component={Skill} />
+              {/* <Route path="/modal" component={SimpleModalWrapped} /> */}
+              <Route component={Top} />
+            </Switch>
+          </main>
+        </div>
+        {/* // </Box> */}
+        {/* </Box> */}
+        {/* </Box> */}
       </BrowserRouter>
     );
   }

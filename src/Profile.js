@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
-import { unstable_Box as Box } from '@material-ui/core/Box';
 
 const styles = theme => ({
     heroUnit: {
@@ -21,9 +20,6 @@ const styles = theme => ({
         width: 'auto',
         marginLeft: theme.spacing.unit * 6,
         marginRight: theme.spacing.unit * 6,
-        // margin: '0 auto',
-        // padding: `${theme.spacing.unit * 6}px 0`,
-        // paddingLeft: theme.spacing.unit*3,
         [theme.breakpoints.up(1100 + theme.spacing.unit * 3 * 2)]: {
             width: 1100,
             marginLeft: 'auto',
@@ -33,10 +29,11 @@ const styles = theme => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
+        justifyContent: 'center',
     },
     textField: {
-        marginLeft: theme.spacing.unit*2,
-        marginRight: theme.spacing.unit*2,
+        marginLeft: theme.spacing.unit * 2,
+        marginRight: theme.spacing.unit * 2,
         marginBottom: theme.spacing.unit * 2,
         width: 200,
     },
@@ -64,10 +61,6 @@ class TextFields extends React.Component {
         Experience3: "冬KC3 2019 モバイルファクトリー賞"
     };
 
-    handleChange = name => event => {
-        this.setState({ [name]: event.target.value });
-    };
-
     linkTo = link => event => {
         window.open(link, '_blank')
     }
@@ -77,7 +70,6 @@ class TextFields extends React.Component {
 
         return (
             <main>
-                {/* Hero unit */}
                 <div className={classes.heroUnit}>
                     <div className={classes.heroContent}>
                         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
@@ -89,14 +81,13 @@ class TextFields extends React.Component {
                     </div>
                 </div>
                 <form className={(classes.layout)} noValidate autoComplete="off">
-                    <Box display="flex" className={classes.container} justifyContent="center">
+                    <div display="flex" className={classes.container} justifyContent="center">
                         <TextField
                             required
                             id="name"
                             label="Name"
                             className={classes.textField}
                             value={this.state.name}
-                            onChange={this.handleChange('name')}
                             margin="normal"
                             InputProps={{
                                 readOnly: true,
@@ -126,8 +117,8 @@ class TextFields extends React.Component {
                                 readOnly: true,
                             }}
                         />
-                    </Box>
-                    <Box display="flex" className={classes.container} justifyContent="center">
+                    </div>
+                    <div display="flex" className={classes.container} justifyContent="center">
                         <TextField
                             error
                             id="github"
@@ -165,8 +156,8 @@ class TextFields extends React.Component {
                                 readOnly: true,
                             }}
                         />
-                    </Box>
-                    <Box display="flex" className={classes.container} justifyContent="center">
+                    </div>
+                    <div display="flex" className={classes.container} justifyContent="center">
                         <TextField
                             error
                             id="twitter"
@@ -201,54 +192,44 @@ class TextFields extends React.Component {
                                 readOnly: true,
                             }}
                         />
-                    </Box>
-                    <Box display="flex" className={classes.container} justifyContent="center">
+                    </div>
+                    <div display="flex" className={classes.container} justifyContent="center">
                         <TextField
                             id="experience1"
                             label="Experience1"
-                            // style={{ margin: 8 }}
-                            // className={classes.textField}
                             defaultValue={this.state.Experience1}
                             fullWidth
-                            // multiline
                             margin="normal"
                             InputProps={{
                                 readOnly: true,
                             }}
                         />
-                    </Box>
-                    <Box display="flex" className={classes.container} justifyContent="center">
+                    </div>
+                    <div display="flex" className={classes.container} justifyContent="center">
                         <TextField
                             id="experience2"
                             label="Experience2"
-                            // style={{ width: 300 }}
-                            // className={classes.textField}
                             defaultValue={this.state.Experience2}
                             fullWidth
-                            // multiline
                             margin="normal"
                             InputProps={{
                                 readOnly: true,
                             }}
                         />
-                    </Box>
-                    <Box display="flex" className={classes.container} justifyContent="center">
+                    </div>
+                    <div display="flex" className={classes.container} justifyContent="center">
                         <TextField
                             id="experience3"
                             label="Experience3"
-                            // style={{ width: 300 }}
-                            // className={classes.textField}
                             defaultValue={this.state.Experience3}
                             fullWidth
-                            // multiline
                             margin="normal"
                             InputProps={{
                                 readOnly: true,
                             }}
 
                         />
-                    </Box>
-                    {/* </Box> */}
+                    </div>
                 </form>
             </main >
         );
