@@ -10,13 +10,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-// import { BrowserRouter, Route, Link } from "react-router-dom"
 
 
 const styles = theme => ({
     heroUnit: {
         backgroundColor: theme.palette.background.paper,
-        // background: "#673AB7",
     },
     heroContent: {
         maxWidth: 600,
@@ -52,14 +50,13 @@ const styles = theme => ({
     },
 });
 
-// const cards = [1, 2, 3, 4, 5, 6, 7, 8];
 const cards = [
     ["images/works/key-valu.jpg", "KEY-VALU", "人の顔から資産価値をBTC換算で割り出すアプリです。How-Old.net × VALUというモチーフで作りました。VALUをスクレイピングした画像からKeras × sckit-learnでモデルを生成しました。", "https://github.com/Wisteria30/key-valu"],
     ["images/works/reiwa.png", "元号判別機", "word2vecを用いた元号判別。単語のベクトルだけでは決めれないので、元号のルールや過去の元号から統計をとって絞りました。令和は元号としてちゃんと判別されました。", "https://qiita.com/Wisteria30/items/ba6ced1d55d12ce79943"],
     ["images/works/ametyan.jpg", "アメちゃん", "冬KC3で作成したアプリ。カードを選ぶことで、関西のおすすめスポットを紹介してくれます。puppetterでじゃらんをスクレピング、Firebaseに保存するところを担当しました。", "https://github.com/winter-kc3/team-8-scraping"],
     ["images/works/kokoiko.jpg", "ココイコ", "HACK-Uで作成したアプリ。GPS機能を用いてユーザーの近くに登録した「お店」があれば、通知します。GCP NLのエンティティ解析とAuto NLの文書分類を使って、Twitter連携からお店のレコメンドを行う部分を担当しました。", ""],
     ["images/works/library.jpg", "電算ライブラリ", "所属している研究会の書籍管理アプリです。Ruby on Rails + booststrapで作成しました。", "https://github.com/Wisteria30/KindaiDensanLib"],
-    ["images/works/portfolio.jpg", "Portfolio", "このポートフォリオです。フレームワークにReactとMaterial-UIを使用しています。", ""],
+    ["images/works/portfolio.jpg", "Portfolio", "このポートフォリオです。フレームワークにReactとMaterial-UIを使用しています。再起できそうですが、それをすると○庫県警に捕まるのでやめました。", ""],
 ]
 
 class Skill extends React.Component {
@@ -67,11 +64,9 @@ class Skill extends React.Component {
     render() {
         const { classes } = this.props;
         return (
-            // <BrowserRouter>
             <React.Fragment>
                 <CssBaseline />
                 <main>
-                    {/* Hero unit */}
                     <div className={classes.heroUnit}>
                         <div className={classes.heroContent}>
                             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>

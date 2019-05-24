@@ -10,7 +10,7 @@ const styles = theme => ({
         margin: 0,
     },
     text: {
-        marginTop: theme.spacing.unit * 50,
+        marginTop: theme.spacing.unit * 35,
     }
 });
 

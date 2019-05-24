@@ -46,7 +46,6 @@ const styles = theme => ({
     },
 });
 
-// const cards = [1, 2, 3, 4, 5, 6, 7, 8];
 const cards = [
     ["Python", "機械学習、Webスクレイピング、競技プログラミングなど様々な用途でメインウェポンとして使用しています。"],
     ["JavaScript", "ReactやFirebase、APIを叩くなどWebが絡むときに使用しています。async,awaitでうっかりPromise返すぐらいには得意です。"],
@@ -62,19 +61,17 @@ function Skill(props) {
         <React.Fragment>
             <CssBaseline />
             <main>
-                {/* Hero unit */}
                 <div className={classes.heroUnit}>
                     <div className={classes.heroContent}>
                         <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
                             Skill
             </Typography>
                         <Typography variant="h6" align="center" color="textSecondary" paragraph>
-                            使用したことのある・使える技術
+                            使用する言語 + @1
             </Typography>
                     </div>
                 </div>
                 <div className={classNames(classes.layout, classes.cardGrid)}>
-                    {/* End hero unit */}
                     <Grid container spacing={40}>
                         {cards.map(card => (
                             <Grid item key={card[0]} sm={6} md={3} lg={4}>

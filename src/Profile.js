@@ -56,7 +56,7 @@ class Profile extends React.Component {
         AtCoder: "https://atcoder.jp/users/wisteria30",
         Facebook: "https://www.facebook.com/profile.php?id=100018025867411",
         Mail: 'skymars0327[at]yahoo.co.jp',
-        Experience1: "近畿大学 電子計算機研究会 会長",
+        Experience1: "近畿大学 電子計算機研究会 2019年度 会長",
         Experience2: "TGL-College2018 DevCon バリュー賞",
         Experience3: "冬KC3 2019 モバイルファクトリー賞"
     };
@@ -98,7 +98,7 @@ class Profile extends React.Component {
                             required
                             id="university"
                             label="University"
-                            defaultValue="近畿大学 理工学部 情報学科"
+                            defaultValue={this.state.university}
                             className={classes.textField}
                             margin="normal"
                             InputProps={{
