@@ -45,10 +45,10 @@ const styles = theme => ({
     },
 });
 
-class TextFields extends React.Component {
+class Profile extends React.Component {
     state = {
         name: 'Kazuma Fujioka',
-        university: "近畿大学 理工学部 情報学科",
+        university: "Kindai University",
         birthday: '1999/03/27',
         GitHub: 'https://github.com/Wisteria30',
         Qiita: 'https://qiita.com/Wisteria30',
@@ -174,7 +174,7 @@ class TextFields extends React.Component {
                             error
                             id="facebook"
                             label="Facebook"
-                            defaultValue="藤岡和真"
+                            defaultValue="Kazuma Fujioka"
                             className={classes.textField}
                             margin="normal"
                             onClick={this.linkTo(this.state.Facebook)}
@@ -236,8 +236,8 @@ class TextFields extends React.Component {
     }
 }
 
-TextFields.propTypes = {
+Profile.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TextFields);
+export default withStyles(styles)(Profile);

@@ -1,10 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom"
-import TextFiled from "./Profile";
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-// import { unstable_Box as Box } from '@material-ui/core/Box';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -22,10 +20,10 @@ import AccountBoxOutlined from '@material-ui/icons/AccountBoxOutlined'
 import InsertInvitation from '@material-ui/icons/InsertInvitation'
 import Star from '@material-ui/icons/Star'
 import SettingsPower from '@material-ui/icons/SettingsPower'
+import Top from "./Top";
+import Profile from "./Profile";
 import WorksCard from "./Works";
 import Skill from "./Skill";
-import Top from "./Top";
-// import SimpleModalWrapped from "./Modal";
 
 const drawerWidth = 240;
 
@@ -38,7 +36,6 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    // background: "#F44336",
     background: "#FFA000",
   },
   appBarShift: {
@@ -120,8 +117,6 @@ class App extends React.Component {
 
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        {/* <Box height={100}> */}
-        {/* <Box height="100%"> */}
         <div className={classes.root}>
           <CssBaseline />
           <AppBar
@@ -190,29 +185,19 @@ class App extends React.Component {
               [classes.contentShift]: open, [classes.top]: color,
             })} onClick={this.handleDrawerClose}
           >
-            {/* <div className={classes.drawerHeader} /> */}
             <Switch>
               <Route exact path='/' component={Top} />
-              <Route path="/profile" component={TextFiled} />
+              <Route path="/profile" component={Profile} />
               <Route path="/works" component={WorksCard} />
               <Route path="/skill" component={Skill} />
-              {/* <Route path="/modal" component={SimpleModalWrapped} /> */}
               <Route component={Top} />
             </Switch>
           </main>
         </div>
-        {/* // </Box> */}
-        {/* </Box> */}
-        {/* </Box> */}
       </BrowserRouter>
     );
   }
 }
-
-// const ChangeColor = withRouter(
-//   ({history}) =>
-//     history
-// )
 
 App.propTypes = {
   classes: PropTypes.object.isRequired,
