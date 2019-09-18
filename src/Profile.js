@@ -162,7 +162,7 @@ class Profile extends React.Component {
                             error
                             id="twitter"
                             label="Twitter"
-                            defaultValue="ジオン"
+                            defaultValue="wisteria30"
                             className={classes.textField}
                             margin="normal"
                             onClick={this.linkTo(this.state.Twitter)}
